@@ -23,6 +23,10 @@ toAST(2) //=> { type: 'Literal', value: 2 }
 
 // or if you want a source string...
 escodegen.generate(toAST(2)) //=> '2'
+
+// or if you have the name of an ojbect and want its AST...
+function foo() { /*function logic here*/ }
+toAST(eval("foo")) //=> same as toAST(foo) (without quotes)
 ```
 
 ## Supported types
