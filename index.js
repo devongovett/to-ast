@@ -125,7 +125,7 @@ function toAST(obj) {
     // Finally, other objects are output as object expressions
     var properties = [];
     for (var key in obj) {
-      if (obj.hasOwnProperty(key)) {
+      if (Object.prototype.hasOwnProperty.call(obj, key)) {
         properties.push(n.property('init', n.literal(key), toAST(obj[key])));
       }
     }
